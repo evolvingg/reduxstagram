@@ -26,4 +26,27 @@ const router = (
   </Provider>
 )
 
+
 render(router, document.getElementById('root'));
+const item = () => {
+
+  document.getElementById('root1').innerHTML = `
+  <div>
+    Hello HTML
+    <input/>
+    <pre>${(new Date).toLocaleTimeString()}</pre>
+  </div>`;
+
+render(
+  React.createElement(
+    'div',
+    null,
+    "hello react",
+    React.createElement('input',null),
+    React.createElement('pre',null,(new Date).toLocaleTimeString()),
+  ),
+    document.getElementById('root2')
+)
+
+}
+setInterval(item,1000);
